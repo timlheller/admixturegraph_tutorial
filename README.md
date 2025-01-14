@@ -6,9 +6,9 @@ Find the full tutorial in https://www.timlheller/admixturegraphs
 ## Input Format
 
 Admixtools requires an atypical bouquet of file formats to run, referred to as EIGENSTRAT, which must be converted accordingly: 
-- A .ind file which is a tab-separated table without header containing the columns  ``` SampleID  Sex  Population ``` . For Sex, we can write either M (male) or F (female) if this information is accessible, otherwise we will declare it as U (undefined).
-- A .geno file with all SNP variants and their relative states in the samples
-- A .snp highlighting the positions of all SNP saved in the .geno files.
+- A ```.ind``` file which is a tab-separated table without header containing the columns  ``` SampleID  Sex  Population ``` . For Sex, we can write either M (male) or F (female) if this information is accessible, otherwise we will declare it as U (undefined).
+- A ```.geno``` file with all SNP variants and their relative states in the samples
+- A ```.snp``` highlighting the positions of all SNP saved in the .geno files.
 
 Whilst the conversion of VCFs to this assortment is complex, there exist scripts to do the work for you. We just need to provide a VCF, which should be LD pruned for unbiased results, and a population file inclosing two columns one: Sample	Population
 The associated Linux package Admixtools2 provides a function, convertf, for conversion of Plink to EIGENSTRAT. However, at the time of writing this tutorial, I was unsuccessful with this application.
@@ -25,7 +25,7 @@ f2_blocks = f2_from_geno(prefix)
 ## Finding the optimal tree topology 
 
 Afterwards, we have two options to find the optimal trees to represent our data in an ideal way. We can either provide a tree and fit the gene flow accordingly or use this tree as a startpoint topology for the find_graph() function. The generation of the initial tree can be omitted, when the topology is unknown.
-The first argument is the previously calculated f2 statistics as an object, then the outgroup as specified in the population file is declared, then we define the number of admixture (hybridization) events and get to choose further iteration parameters. Here, we can specify a tree with initgraph = as an R-object 
+The first argument is the previously calculated f2 statistics as an object, then the outgroup as specified in the population file is declared, then we define the number of admixture (hybridization) events and get to choose further iteration parameters. Here, we can specify a tree with ```initgraph =``` as an R-object 
 ```
 candidate_graphs = find_graphs(
   f2_blocks, outpop="Outgroup", #numadmix = 1
@@ -36,7 +36,7 @@ candidate_graphs = find_graphs(
  ```
 
 ## Fitting data to tree topology
-To fit the data now, we run the command qpgraph and specify the f2 statistics as the first and the tree topology as the second argument. The column $score displays the model fit for the data on the topology. We can plot these admixture and drift values using the $edges column. 
+To fit the data now, we run the command qpgraph and specify the f2 statistics as the first and the tree topology as the second argument. The column ```$score``` displays the model fit for the data on the topology. We can plot these admixture and drift values using the ```$edge```s column. 
 
 If you have all elements within the candidate_graphs, we can automate the fitting and evaluation of every graph as follows: 
 
