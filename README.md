@@ -31,13 +31,14 @@ Admixtools requires an atypical bouquet of file formats to run, referred to as E
 Whilst the conversion of VCFs to this assortment is complex, there exist scripts to do the work for you. We just need to provide a VCF, which should be LD pruned for unbiased results, and a population file inclosing two columns one: Sample	Population
 The associated Linux package Admixtools2 provides a function, convertf, for conversion of Plink to EIGENSTRAT. However, at the time of writing this tutorial, I was unsuccessful with this application.
 
-Reading Eigenstrat and calculating f2
+## Reading Eigenstrat and calculating f2
 
-We now provide the file name stem provided to the conversion script as a file prefix and generate our f2 statistics. I will use simulated data, that you can download at :____ to follow this tutorial accordingly.
-library(admixtools)
+We now provide the file name stem provided to the conversion script as a file prefix and generate our f2 statistics. I will use the simulated data I provided in this repository, you can follow the tutorial.
+
+``` library(admixtools)
 prefix = "heller_sim"
 f2_blocks = f2_from_geno(prefix)
-
+``` 
 
 
 
