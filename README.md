@@ -1,6 +1,6 @@
 # Comprehensive Guide on generating Admixture Graphs using Admixtools2 in R
 Admixture graphs allow researchers to model historical admixture events, which is particularly useful in hybridization studies to calculate the relative contributions of parental lineages to hybrids. They provide additional insights beyond classic Treemix and f-branch plots. After an extensive search for a straightforward tutorial on generating admixture graphs from genetic variant data yielded little success, I decided to write a comprehensive guide to help integrate this powerful analytical tool into your research.
-Find the full tutorial in https://www.timlheller/admixturegraphs
+Find the full tutorial in https://www.timlheller.com/admixturegraphs
 
 
 ## Input Format
