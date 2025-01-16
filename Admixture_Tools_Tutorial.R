@@ -49,5 +49,5 @@ bootstrap[[2]] %>% summarize_fits() %>% plotly_graph(print_highlow = TRUE, fix=T
 install.packages("RSelenium", repos = "https://cloud.r-project.org/")
 library(RSelenium)
 bootstrap[[2]] %>% summarize_fits() %>% plotly_graph(print_highlow = TRUE, fix=T) %>%
-  export(file = "Bootstrap_Tree.svg",
+  orca(file = "Bootstrap_Tree.svg",
        selenium = RSelenium::rsDriver(browser = "chrome"))
