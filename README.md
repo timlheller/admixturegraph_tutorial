@@ -10,7 +10,8 @@ Admixtools requires an atypical bouquet of file formats to run, referred to as E
 - A ```.geno``` file with all SNP variants and their relative states in the samples
 - A ```.snp``` highlighting the positions of all SNP saved in the .geno files.
 
-Whilst the conversion of VCFs to this assortment is complex, there exist scripts to do the work for you. We just need to provide a VCF, which should be LD pruned for unbiased results, and a population file inclosing two columns one: Sample	Population
+Whilst the conversion of VCFs to this assortment is complex, there exist scripts to do the work for you. We just need to provide a VCF, which should be LD pruned for unbiased results.
+The necessary script can be found here https://github.com/bodkan/vcf2eigenstrat/blob/master/conversion.sh. Furthermore, we must provide a .ind file manually, linking the samples used in the VCF file to their population. The datastructure is provided above.
 The associated Linux package Admixtools2 provides a function, convertf, for conversion of Plink to EIGENSTRAT. However, at the time of writing this tutorial, I was unsuccessful with this application.
 
 ## Reading Eigenstrat and calculating f2
