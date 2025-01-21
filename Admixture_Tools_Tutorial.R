@@ -46,8 +46,7 @@ compare_fits(bootstrap[[1]]$score, bootstrap[[2]]$score)
 bootstrap[[2]] %>% summarize_fits() %>% plotly_graph(print_highlow = TRUE, fix=T)
 
 #OPTIONAL: Exporting the graphs to SVG. Will be spawned in the "Downloads" folder
-install.packages("RSelenium", repos = "https://cloud.r-project.org/")
-library(RSelenium)
-bootstrap[[2]] %>% summarize_fits() %>% plotly_graph(print_highlow = TRUE, fix=T) %>%
-  orca(file = "Bootstrap_Tree.svg",
-       selenium = RSelenium::rsDriver(browser = "chrome"))
+install.packages("reticulate")
+library(reticulate)
+reticulate::py_install("kaleido")
+bootstrap[[2]] %>% summarize_fits() %>% plotly_graph(print_highlow = TRUE, fix=T) %>% save_image("filename.svg")
