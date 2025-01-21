@@ -70,5 +70,5 @@ reticulate::py_config()
 reticulate::py_install("kaleido")
 
 final_plot = bootstrap[[2]] %>% summarize_fits() %>% plotly_graph(print_highlow = TRUE, fix=T)
-save_image(file = "Bootstrap_Tree_Fit.svg")
+save_image(final_plot, file = "Bootstrap_Tree_Fit.svg")
   
